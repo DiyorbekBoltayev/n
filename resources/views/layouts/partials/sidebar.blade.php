@@ -28,10 +28,10 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item">
-                            <a href="products.html">Products</a>
+                            <a href="{{ route('product.index') }}">Products</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="categories.html">Category</a>
+                            <a href="{{ route('category.index') }}">Category</a>
                         </li>
                     </ul>
                 </li>

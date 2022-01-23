@@ -55,18 +55,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet" />
 
 
     <!-- Datables CSS -->
-    <link rel="stylesheet" href="vendors/simple-datatables/style.css" />
-    <link rel="stylesheet" href="vendors/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="vendors/bootstrap-icons/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="{{ url('vendors/simple-datatables/style.css') }}" />
+    <link rel="stylesheet" href="{{ url('vendors/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ url('vendors/bootstrap-icons/bootstrap-icons.css') }}" />
+    <link rel="stylesheet" href="{{ url('css/app.css') }}" />
     <title>Document</title>
 </head>
 
@@ -84,15 +84,15 @@
 
     </div>
 
-    <script src="vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="{{ url('vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('vendors/simple-datatables/simple-datatables.js') }}"></script>
     {{-- <script>
         // Simple Datatable
         let table1 = document.querySelector("#table1");
         let dataTable = new simpleDatatables.DataTable(table1);
     </script> --}}
-    <script src="js/main.js"></script>
+    <script src="{{ url('js/main.js') }}"></script>
 </body>
 
 </html>

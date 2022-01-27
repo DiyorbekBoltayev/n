@@ -6,7 +6,7 @@
         <div class="float-end">
             <p>
                 Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                by <a href="https://ahmadsaugi.com">Andi Kurniawan</a>
+                by <a href="#">Andi Kurniawan</a>
             </p>
         </div>
     </div>

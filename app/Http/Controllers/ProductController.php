@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -30,9 +32,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $data = Product::join('kategori', 'kategori.id_kategori', '=', 'produk.id_kategori')
-            ->select('id_produk', 'nama_produk', 'stok', 'nama_kategori', 'kategori.id_kategori')
-            ->get();
+        $data = Category::get();
         return view("products/create")->with([
             'data' => $data
         ]);
@@ -46,19 +46,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nama' => 'required',
-            'kategori' => 'required',
-            'stok' => 'required'
-        ]);
+        try {
+            $this->validate($request, [
+                'nama' => 'required',
+                'kategori' => 'required',
+                'stok' => 'required'
+            ]);
 
-        Product::create([
-            'nama_produk' => $request->nama,
-            'id_kategori' => $request->kategori,
-            'stok' => $request->stok
-        ]);
+            Product::create([
+                'nama_produk' => $request->nama,
+                'id_kategori' => $request->kategori,
+                'stok' => $request->stok
+            ]);
+            $status = "Berhasil";
+            $msg = "Data berhasil disimpan";
+        } catch (Exception $e) {
+            $status = "Gagal";
+            $msg = "Data gagal disimpan";
+        }
 
-        return redirect()->route('product.index')->with('Berhasil', "Data berhasil ditambahkan");
+
+        return redirect()->route('product.index')->with($status, $msg);
     }
 
     /**
@@ -100,19 +108,27 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $this->validate($request, [
-            'nama' => 'required',
-            'kategori' => 'required',
-            'stok' => 'required'
-        ]);
+        try {
+            $this->validate($request, [
+                'nama' => 'required',
+                'kategori' => 'required',
+                'stok' => 'required'
+            ]);
 
-        $product->update([
-            'nama_produk' => $request->nama,
-            'id_kategori' => $request->kategori,
-            'stok' => $request->stok
-        ]);
+            $product->update([
+                'nama_produk' => $request->nama,
+                'id_kategori' => $request->kategori,
+                'stok' => $request->stok
+            ]);
+            $status = "Berhasil";
+            $msg = "Data berhasil diubah";
+        } catch (Exception $e) {
+            $status = "Gagal";
+            $msg = "Data gagal diubah";
+        }
 
-        return redirect()->route('product.index')->with('Berhasil', "Data berhasil diubah");
+
+        return redirect()->route('product.index')->with($status, $msg);
     }
 
     /**
@@ -123,8 +139,16 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
+        try {
+            $product->delete();
+            $status = "Berhasil";
+            $msg = "Data berhasil dihapus";
+        } catch (Exception $e) {
+            $status = "Gagal";
+            $msg = "Data gagal dihapus";
+        }
 
-        return redirect()->route('product.index')->with('Berhasil', "Data berhasil dihapus");
+
+        return redirect()->route('product.index')->with($status, $msg);
     }
 }

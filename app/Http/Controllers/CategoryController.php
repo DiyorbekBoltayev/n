@@ -42,11 +42,15 @@ class CategoryController extends Controller
             'nama' => 'required'
         ]);
 
-        Category::create([
+        $result = Category::create([
             'nama_kategori' => $request->nama
         ]);
 
-        return redirect()->route('category.index')->with('Berhasil', "Data berhasil ditambahkan");
+        if ($result) {
+            return redirect()->route('category.index')->with('Berhasil', "Data berhasil ditambahkan");
+        } else {
+            return redirect()->route('category.index')->with('Gagal', "Data gagal ditambahkan");
+        }
     }
 
     /**
@@ -85,11 +89,15 @@ class CategoryController extends Controller
             'nama' => 'required'
         ]);
 
-        Category::findOrFail($id)->update([
+        $result = Category::findOrFail($id)->update([
             'nama_kategori' => $request->nama
         ]);
 
-        return redirect()->route('category.index')->with('Berhasil', "Data berhasil diubah");
+        if ($result) {
+            return redirect()->route('category.index')->with('Berhasil', "Data berhasil diubah");
+        } else {
+            return redirect()->route('category.index')->with('Gagal', "Data gagal diubah");
+        }
     }
 
     /**
@@ -100,8 +108,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::findOrFail($id)->delete();
+        $result = Category::findOrFail($id)->delete();
 
-        return redirect()->route('category.index')->with('Berhasil', "Data berhasil dihapus");
+        if ($result) {
+            return redirect()->route('category.index')->with('Berhasil', "Data berhasil dihapus");
+        } else {
+            return redirect()->route('category.index')->with('Gagal', "Data berhasil dihapus");
+        }
     }
 }

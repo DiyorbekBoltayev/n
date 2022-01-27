@@ -1,6 +1,18 @@
 @extends('layouts/app')
 
 @section('content')
+    @if (session('Berhasil'))
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{ session('Berhasil') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session('Gagal'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('Gagal') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
@@ -28,7 +40,6 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nama</th>
                                 <th>Aksi</th>
                             </tr>
@@ -36,7 +47,6 @@
                         <tbody>
                             @foreach ($data as $row)
                                 <tr>
-                                    <td>{{ $row->id_kategori }}</td>
                                     <td>{{ $row->nama_kategori }}</td>
                                     <td>
                                         <form action="{{ route('category.destroy', $row->id_kategori) }}" method="POST">
@@ -46,7 +56,8 @@
 
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Apakah anda ingin menghapus data ini?')">Hapus</button>
                                         </form>
                                     </td>
 

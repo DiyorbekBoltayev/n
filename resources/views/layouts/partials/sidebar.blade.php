@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/" class="title">Inventory</a>
+                    <a href="/" class="title">Inventorizatsiya</a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -23,25 +23,30 @@
 
                 <li class="sidebar-item">
                     <a href="{{ route('product.index') }}" class="sidebar-link">
-                        <span>Product</span>
+                        <span>Mahsulotlar</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{ route('category.index') }}" class="sidebar-link">
-                        <span>Category</span>
+                        <span>Kategoriyalar</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{ route('warehouse.index') }}" class="sidebar-link">
-                        <span>Warehouse</span>
+                        <span>Omborlar</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{ route('inventory.index') }}" class="sidebar-link">
-                        <span>Inventory</span>
+                        <span>Inventorizatsiya</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('tahlil') }}" class="sidebar-link">
+                        <span>Umumiy tahlil</span>
                     </a>
                 </li>
 

@@ -5,16 +5,8 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Edit Product</h3>
+                    <h3>Kategoriyani tahrirlash</h3>
                     <!-- <p class="text-subtitle text-muted">Navbar will appear in top of the page.</p> -->
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Main</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </div>
@@ -35,12 +27,12 @@
                                         @csrf
                                         @method('PUT')
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Nama Kategori</label>
+                                            <label for="name" class="form-label">Kategoriya nomi</label>
                                             <input type="text" class="form-control" id="nama" name="nama"
                                                 aria-describedby="name" value="{{ $data->nama_kategori }}" />
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary">Edit</button>
+                                        <button type="submit" class="btn btn-primary">Tahrirlash</button>
                                     </form>
                                 </div>
                             </div>

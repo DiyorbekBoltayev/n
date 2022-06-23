@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\GudangController;
-use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\{
+    CategoryController,
+    ProductController,
+    GudangController,
+    InventoryController,
+    TahlilController,
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +18,8 @@ use App\Http\Controllers\InventoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('/', ProductController::class);
+Route::get('/',[\App\Http\Controllers\LogController::class,'index'])->name('home_login');
+Route::post('/log',[\App\Http\Controllers\LogController::class,'check'])->name('check_login');
 
 // Route::get('/category', function () {
 //     return view('category/index');
@@ -33,6 +36,9 @@ Route::resource('warehouse', GudangController::class);
 
 // Inventory
 Route::resource('inventory', InventoryController::class);
+//Tahlil
+Route::get('/tahlil',[TahlilController::class,'index'])->name('tahlil');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

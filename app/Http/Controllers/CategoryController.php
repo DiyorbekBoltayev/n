@@ -47,9 +47,9 @@ class CategoryController extends Controller
         ]);
 
         if ($result) {
-            return redirect()->route('category.index')->with('Berhasil', "Data berhasil ditambahkan");
+            return redirect()->route('category.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli qoʻshildi");
         } else {
-            return redirect()->route('category.index')->with('Gagal', "Data gagal ditambahkan");
+            return redirect()->route('category.index')->with('Gagal', "Maʼlumotlarni qoʻshib boʻlmadi");
         }
     }
 
@@ -94,9 +94,9 @@ class CategoryController extends Controller
         ]);
 
         if ($result) {
-            return redirect()->route('category.index')->with('Berhasil', "Data berhasil diubah");
+            return redirect()->route('category.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli tahrirlandi");
         } else {
-            return redirect()->route('category.index')->with('Gagal', "Data gagal diubah");
+            return redirect()->route('category.index')->with('Gagal', "Maʼlumotlarni tahrirlab boʻlmadi");
         }
     }
 
@@ -111,9 +111,9 @@ class CategoryController extends Controller
         $result = Category::findOrFail($id)->delete();
 
         if ($result) {
-            return redirect()->route('category.index')->with('Berhasil', "Data berhasil dihapus");
+            return redirect()->route('category.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli oʻchirildi");
         } else {
-            return redirect()->route('category.index')->with('Gagal', "Data berhasil dihapus");
+            return redirect()->route('category.index')->with('Gagal', "Maʼlumotlarni oʻchirib boʻlmadi");
         }
     }
 }

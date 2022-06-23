@@ -68,10 +68,10 @@ class InventoryController extends Controller
                 'status' => $request->status
             ]);
             $status = "Berhasil";
-            $msg = "Data berhasil disimpan";
+            $msg = "Maʼlumotlar muvaffaqiyatli saqlandi";
         } catch (Exception $e) {
             $status = "Gagal";
-            $msg = "Data gagal disimpan";
+            $msg = "Maʼlumotlarni saqlab boʻlmadi";
         }
 
         return redirect()->route('inventory.index')->with($status, $msg);
@@ -138,10 +138,10 @@ class InventoryController extends Controller
                 'status' => $request->status
             ]);
             $status = "Berhasil";
-            $msg = "Data berhasil diubah";
+            $msg = "Maʼlumotlar muvaffaqiyatli oʻzgartirildi";
         } catch (Exception $e) {
             $status = "Gagal";
-            $msg = "Data gagal diubah";
+            $msg = "Maʼlumotlarni oʻzgartirib boʻlmadi";
         }
 
 
@@ -159,10 +159,10 @@ class InventoryController extends Controller
         try {
             $inventory->delete();
             $status = "Berhasil";
-            $msg = "Data berhasil dihapus";
+            $msg = "Maʼlumotlar muvaffaqiyatli oʻchirildi";
         } catch (Exception $e) {
             $status = "Gagal";
-            $msg = "Data gagal dihapus";
+            $msg = "Maʼlumotlarni oʻchirib boʻlmadi";
         }
 
 

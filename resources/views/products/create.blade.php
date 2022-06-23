@@ -5,16 +5,8 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Add Product</h3>
+                    <h3>Mahsulot qo'shish</h3>
                     <!-- <p class="text-subtitle text-muted">Navbar will appear in top of the page.</p> -->
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Main</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Add Product</li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </div>
@@ -34,27 +26,23 @@
                                     <form action="{{ route('product.store') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Nama Produk</label>
+                                            <label for="name" class="form-label">Mahsulot nomi</label>
                                             <input type="text" class="form-control" id="nama" name="nama"
                                                 aria-describedby="name" />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="kategori" class="form-label">Kategori</label>
+                                            <label for="kategori" class="form-label">Kategoriya</label>
                                             <select class="form-select" name="kategori"
                                                 aria-label="Default select example">
-                                                <option selected>Select Data</option>
+                                                <option selected>Tanlang:</option>
                                                 @foreach ($data as $row)
                                                     <option value="{{ $row->id_kategori }}">{{ $row->nama_kategori }}
                                                     </option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="stok" class="form-label">Stok</label>
-                                            <input type="text" type="number" class="form-control" id="stok" name="stok"
-                                                aria-describedby="name" />
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Add</button>
+
+                                        <button type="submit" class="btn btn-primary">Qo'shish</button>
                                     </form>
                                 </div>
                             </div>

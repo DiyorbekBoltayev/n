@@ -49,9 +49,9 @@ class GudangController extends Controller
         ]);
 
         if ($result) {
-            return redirect()->route('warehouse.index')->with('Berhasil', "Data berhasil ditambahkan");
+            return redirect()->route('warehouse.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli qoʻshildi");
         } else {
-            return redirect()->route('warehouse.index')->with('Gagal', "Data gagal ditambahkan");
+            return redirect()->route('warehouse.index')->with('Gagal', "Maʼlumotlarni qoʻshib boʻlmadi");
         }
     }
 
@@ -98,9 +98,9 @@ class GudangController extends Controller
         ]);
 
         if ($result) {
-            return redirect()->route('warehouse.index')->with('Berhasil', "Data berhasil diubah");
+            return redirect()->route('warehouse.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli oʻzgartirildi");
         } else {
-            return redirect()->route('warehouse.index')->with('Gagal', "Data gagal diubah");
+            return redirect()->route('warehouse.index')->with('Gagal', "Maʼlumotlarni oʻzgartirib boʻlmadi");
         }
     }
 
@@ -115,9 +115,9 @@ class GudangController extends Controller
         $result = Gudang::findOrFail($id)->delete();
 
         if ($result) {
-            return redirect()->route('warehouse.index')->with('Berhasil', "Data berhasil dihapus");
+            return redirect()->route('warehouse.index')->with('Berhasil', "Maʼlumotlar muvaffaqiyatli oʻchirildi");
         } else {
-            return redirect()->route('warehouse.index')->with('Gagal', "Data gagal dihapus");
+            return redirect()->route('warehouse.index')->with('Gagal', "Maʼlumotlarni oʻchirib boʻlmadi");
         }
     }
 }

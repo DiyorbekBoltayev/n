@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="{{ url('vendors/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ url('vendors/bootstrap-icons/bootstrap-icons.css') }}" />
     <link rel="stylesheet" href="{{ url('css/app.css') }}" />
-    <title>Inventory</title>
+    <title>Inventoririzatsiya</title>
 </head>
 
 <body>

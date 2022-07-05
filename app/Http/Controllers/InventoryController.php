@@ -54,6 +54,7 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         try {
             $this->validate($request, [
                 'id_produk' => 'required',
